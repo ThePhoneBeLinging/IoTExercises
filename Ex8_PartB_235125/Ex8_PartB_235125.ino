@@ -9,19 +9,19 @@
 
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/AnalogReadSerial
 */
-
+const int ledPath = 3;
 // the setup routine runs once when you press reset:
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
+  pinMode(ledPath, OUTPUT);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
   // read the input on analog pin 0:
   int sensorValue = analogRead(A0);
-  float val = sensorValue / (1023.0 / 5.0);
-  // print out the value you read:
-  Serial.println(val,3);
+  analogWrite(ledPath,sensorValue / 4);
+  Serial.println(sensorValue);
   delay(1);  // delay in between reads for stability
 }
