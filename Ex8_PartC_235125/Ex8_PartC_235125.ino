@@ -19,6 +19,7 @@ void loop() {
   if (sensorValue < 146)
   {
     analogWrite(blue, 255);
+    analogWrite(green, 0);
     analogWrite(red, 255 - diff);
   }
   // Blue to Cyan
