@@ -53,15 +53,8 @@ void loop() {
   // Orange to Red
   else if (sensorValue < 1024)
   {
-    if (sensorValue > 1015)
-    {
-      analogWrite(green, 0);
-    }
-    else 
-    {
-      analogWrite(green,255/2 - diff/2);
-    }
     analogWrite(blue, 0);
+    analogWrite(green,255/2 - diff/2);
     analogWrite(red, 255);
   }
   else
@@ -70,4 +63,5 @@ void loop() {
     analogWrite(green, 0);
     analogWrite(red, 0);
   }
+  delay(1);
 }
