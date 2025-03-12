@@ -1,12 +1,12 @@
 
-const byte pin1 = 9; // DONE
+const byte pin1 = 9; 
 const byte pin2 = 8;
-const byte pin3 = 12; // DONE
-const byte pin4 = 7; // DONE
-const byte pin5 = 10; // DONE
-const byte pin6 = 13; // DONE
+const byte pin3 = 12;
+const byte pin4 = 7; 
+const byte pin5 = 10;
+const byte pin6 = 13;
 const byte pin7 = 11;
-const byte pin8 = 1; // DONE
+const byte pin8 = 1;
 
 void drawZero()
 {
@@ -95,7 +95,6 @@ void drawNine()
   digitalWrite(pin2,HIGH);
   digitalWrite(pin1, HIGH);
   digitalWrite(pin8,HIGH);
-  //digitalWrite(pin5, HIGH);
   digitalWrite(pin6, HIGH);
   digitalWrite(pin7, HIGH);
 }
