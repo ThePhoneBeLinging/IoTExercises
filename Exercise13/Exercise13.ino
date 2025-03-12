@@ -21,8 +21,10 @@ void setup() {
 }
 
 void loop() {
+  // Continue playing the game until reaching 10 correct answers
   while (correctAnswers < 10) {
     cycleLEDs();
+    // If 8 correct answers is reached start flashing randomly
     if (correctAnswers >= 8) {
       flashRandomly();
     }
@@ -30,6 +32,7 @@ void loop() {
   gameOver();
 }
 
+// Turn the LED's on one by one 
 void cycleLEDs() {
   for (int i = 0; i < 5; i++) {
     int currentLED = getLEDFromIndex(i);
@@ -38,6 +41,7 @@ void cycleLEDs() {
     for (int i = 0; i < 1000/multiplier; i++)
     {
         delay(1);
+        // Check if the button was pressed while this LED was on
         if (checkButtonPress()) {
         return;
         }
@@ -47,6 +51,7 @@ void cycleLEDs() {
   }
 }
 
+// Check if the button was pressed at the correct time
 bool checkButtonPress() {
   if (digitalRead(buttonPin) == HIGH) {
     pressed = true;
@@ -64,6 +69,7 @@ bool checkButtonPress() {
   return false;
 }
 
+// Turn on all LED's to indicate that the game has been won
 void indicateSuccess() {
   for (int i = 0; i < 3; i++) {
     turnAllLEDs(HIGH);
@@ -96,6 +102,7 @@ void gameOver() {
   }
 }
 
+// Set all LED's to the same state
 void turnAllLEDs(int state) {
   digitalWrite(pin0, state);
   digitalWrite(pin1, state);
